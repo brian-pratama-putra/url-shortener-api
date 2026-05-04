@@ -63,6 +63,16 @@ inquiry_examples = {
             "checksum": "ghi123"
         }
     },
+    "generate_qr_url": {
+        "summary": "Generate QR code dari short URL",
+        "value": {
+            "method": "generate_qr_url",
+            "short_code": "abc123",
+            "session_key": "sess_xxx",
+            "datetime": "2025-07-29 12:00:00",
+            "checksum": "jkl123"
+        }
+    },
 }
 
 
@@ -110,6 +120,14 @@ class GetUrlStatsRequest(BaseModel):
 class GetTopUrlRequest(BaseModel):
     method: str
     limit: Optional[str] = "10"
+    session_key: str
+    datetime: str
+    checksum: str
+
+
+class GenerateQrUrlRequest(BaseModel):
+    method: str
+    short_code: str
     session_key: str
     datetime: str
     checksum: str

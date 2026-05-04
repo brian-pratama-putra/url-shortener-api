@@ -16,6 +16,7 @@ from aplikasi.controllers.api.get_url_list_controller import get_url_list_contro
 from aplikasi.controllers.api.delete_url_controller import delete_url_controller
 from aplikasi.controllers.api.get_url_stats_controller import get_url_stats_controller
 from aplikasi.controllers.api.get_top_url_controller import get_top_url_controller
+from aplikasi.controllers.api.generate_qr_url_controller import generate_qr_url
 
 from aplikasi.models.api_model import (
     CreateShortUrlRequest,
@@ -24,6 +25,7 @@ from aplikasi.models.api_model import (
     DeleteUrlRequest,
     GetUrlStatsRequest,
     GetTopUrlRequest,
+    GenerateQrUrlRequest,
 )
 
 InquiryRequestUnion = Union[
@@ -33,6 +35,7 @@ InquiryRequestUnion = Union[
     DeleteUrlRequest,
     GetUrlStatsRequest,
     GetTopUrlRequest,
+    GenerateQrUrlRequest,
 ]
 
 
@@ -64,6 +67,8 @@ async def inquiry(request: Request):
             return await get_url_stats_controller(request)
         elif v_method == "get_top_url":
             return await get_top_url_controller(request)
+        elif v_method == "generate_qr_url":
+            return await generate_qr_url(request)
         else:
             return await response_service(request, v_method, 405, 405, "Invalid Method")
 
