@@ -1,0 +1,7 @@
+DOKUMENTASI.md
+vir-url-shortener-api/
+__pycache__/
+*.pyc
+.env
+log/
+*.log

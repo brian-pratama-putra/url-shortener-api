@@ -1,0 +1,3 @@
+import os
+
+LOG_NAME = "URL_SHORTENER_API_V1_DEV"
