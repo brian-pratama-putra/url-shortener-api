@@ -1,13 +1,3 @@
-"""
-Update : 2022-27-09
-SatLog Versi 2 untuk exec
-Return GAE : StackDriver, GCE : Folder Log
-Version : 1.0.0
-Requirements :
- standardLib : google-cloud-logging
- Lib Python : globalVar.py
-"""
-
 import os
 import globalVar
 
